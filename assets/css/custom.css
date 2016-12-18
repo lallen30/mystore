@@ -104,3 +104,6 @@ button#xbutton{
 td.padd{
 	padding:5px 0;
 }
+
+.form-control {
+    background: #F7C4FF !important;
