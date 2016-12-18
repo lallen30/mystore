@@ -5,12 +5,24 @@
             <th>QTY</th>
             <th>Item Description</th>
             <th style="text-align:right">Item Price</th>
+            <th style="text-align:right"> </th>
         </tr>
-        <tr>
-            <td></td>
-            <td class="right"><strong>Total</strong></td>
-            <td class="right" style="text-align:right">$</td>
-        </tr>
+        <?php $i = 1; ?>
+<?php foreach ($this->cart->contents() as $items): ?>
+<input type="hidden" name="<?php echo $i.'[rowid]'; ?>" value="<?php echo $items['rowid']; ?>" />
+<tr>
+    <td class="padd"><input type="text" name="<?php echo $i.'[qty]'; ?>" value="<?php echo $items['qty']; ?>" maxlength="3" size="5" class="qty" /></td>
+    <td class="padd"><?php echo $items['name']; ?></td>
+    <td class="padd" style="text-align:right"><?php echo $this->cart->format_number($items['price']); ?></td>
+    <td class="textalignright"><button name="<?php echo $i.'[qty]'; ?>" value="0" id="xbutton" type="submit">x</button></td>
+</tr>
+<?php $i++; ?>
+<?php endforeach; ?>
+<tr>
+<td></td>
+<td class="right"><strong>Total</strong></td>
+<td class="right" style="text-align:right">$<?php echo $this->cart->format_number($this->cart->total()); ?></td>
+</tr>
     </table>
 <br>
 <p><button class="btn btn-default" type="submit">Update Cart</button>
