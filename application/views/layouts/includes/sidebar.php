@@ -1,3 +1,4 @@
+<?php if($this->cart->contents()) : ?>
 <div class="cart-block">
 <form action="cart/update" method="post">
     <table cellpadding="6" cellspacing="1" style="width:100%" border="0">
@@ -8,6 +9,7 @@
             <th style="text-align:right"> </th>
         </tr>
         <?php $i = 1; ?>
+
 <?php foreach ($this->cart->contents() as $items): ?>
 <input type="hidden" name="<?php echo $i.'[rowid]'; ?>" value="<?php echo $items['rowid']; ?>" />
 <tr>
@@ -26,9 +28,10 @@
     </table>
 <br>
 <p><button class="btn btn-default" type="submit">Update Cart</button>
-<a class="btn btn-default" href="cart.html">Go To Cart</a></p>
+<a class="btn btn-default" href="cart">Go To Cart</a></p>
 </form>
 </div>
+<?php endif; ?>
 <div class="panel panel-default panel-list">
 <div class="panel-heading panel-heading-dark">
      <h3 class="panel-title">

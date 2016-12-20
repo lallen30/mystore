@@ -26,6 +26,22 @@ $config['base_url'] = 'http://localhost:8080/mystore/';
 
 /*
 |--------------------------------------------------------------------------
+| Custom Config
+|--------------------------------------------------------------------------
+|
+*/
+$config['shipping'] = 4.99;
+$config['tax'] = 2.99;
+$config['paypal_mode']				= 'sandbox';
+$config['paypal_api_username'] 		= 'lallen30-facilitator_api1.yahoo.com';
+$config['paypal_api_password']		= 'SRNE9HPYEZQV4UGR';
+$config['paypal_api_signature']		= 'APUi.SmO0XvTsLXuT4PpIKfGb.VlAgE7Zo5WD4tn4O3hOhJGt5-hffLb';
+$config['paypal_currency_code']		= 'USD';
+$config['paypal_return_url']		= 'https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=';
+$config['paypal_cancel_url']		= 'http://geekidy.com/mystore/cart/cancel';
+
+/*
+|--------------------------------------------------------------------------
 | Index File
 |--------------------------------------------------------------------------
 |

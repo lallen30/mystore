@@ -26,8 +26,8 @@ class Users extends CI_Controller{
 		$this->form_validation->set_rules('username','Username','trim|required|min_length[4]|max_length[16]');
         $this->form_validation->set_rules('password','Password','trim|required|min_length[4]|max_length[50]');
 
-		$username = $this->input->post('username');
-		$password = md5($this->input->post('password'));
+		$username = $this->input->post('username'); //Same as $username = $_POST['username'];
+		$password = md5($this->input->post('password')); //Same as $password = md5($_POST['password']);
 
 		$user_id = $this->User_model->login($username, $password);
 
